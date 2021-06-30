@@ -1,0 +1,53 @@
+ public class replace
+{
+
+    static int replaceDigit(int x, int d1, int d2)
+
+    {
+
+        int result = 0, multiply = 1;
+ 
+
+        while (x / 10 > 0) 
+
+    {
+
+            int remainder = x % 10;
+
+            if (remainder == d1)
+
+                result = result + d2 * multiply;
+ 
+
+            else 
+
+                result = result + remainder * multiply;k
+
+            multiply *= 10;
+
+            x = x / 10; 
+
+        }
+
+        if (x == d1)
+
+            result = result + d2 * multiply;
+ 
+
+        else 
+
+            result = result + x * multiply;
+
+        return result;
+
+    }
+
+    public static void main(String[] args)
+
+    {
+
+        int x = 345, d1 = 3, d2 = 5;
+
+        System.out.println(replaceDigit(x, d1, d2));
+
+    }
